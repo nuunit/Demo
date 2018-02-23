@@ -1,0 +1,8 @@
+<input autocomplete="off" #searchBox id="search-box" (keyup)="search(searchBox.value)" class="form-control form-control-lg" placeholder="Search a city...">
+<ul class="auto-complete-box">
+  <li *ngFor ="let city of cities$ | async">
+      <a routerLink="/hotel/{{city.code}}">
+        {{city.name}}
+      </a>
+  </li>
+</ul>

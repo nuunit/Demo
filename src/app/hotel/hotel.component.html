@@ -1,0 +1,30 @@
+<div class="container">
+  
+  <!-- Page Heading -->
+  <h1 class="my-4">{{cityCode}}: 
+    <small>{{hotels?.length}} Hotel found</small>
+  </h1>
+  <div class="row" *ngFor="let hotel of hotels">
+    <div class="col-md-5">
+      <a href="#">
+        <img class="img-fluid rounded mb-3 mb-md-0" src="{{hotel.thumbnailPicture}}" alt="">
+      </a>
+    </div>
+    <div class="col-md-5">
+      <h4>{{hotel.name}}</h4>
+      <p>{{hotel.city.name}}</p>
+      <p>{{hotel.address}}</p>
+      <a class="btn btn-primary" href="/hotelDetail/{{hotel.id}}">Book</a>
+    </div>
+    <div class="col-md-2">     
+        <p class="price">
+            {{hotel.roomClasses[0].totalPrice}} <small class="avg">{{'AVG NIGHT' }}</small>
+        </p>
+    </div>
+    <div>    
+        <hr> -
+    </div>
+  
+  </div>
+  <button class="btn"  (click)="searchAgain()">Go back</button>
+</div>

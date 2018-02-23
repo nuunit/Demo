@@ -1,0 +1,27 @@
+<div class="container">
+    <!-- Portfolio Item Heading -->
+    <h1 class="my-4">{{hotel?.name}}
+      <small> {{hotel?.roomClasses[0].name}} </small>
+    </h1>
+    <!-- Portfolio Item Row -->
+    <div class="row">
+      <div class="col-md-8">
+        <img class="img-fluid"  src="{{hotel?.thumbnailPicture}}" alt="">
+      </div>
+
+      <div class="col-md-4">
+        <h3 class="my-3">Description</h3>
+        <p>{{hotel?.city.name}}</p>
+        <p>{{hotel?.address}}</p>
+        <h3 class="my-3">Hotel Details</h3>
+        <ul>
+          <li>TV channels</li>
+          <li>Airluggage</li>
+          <li>Fitness</li>
+          <li>Check-in & check-out</li>
+        </ul>
+      </div>
+      <button class="btn btn-primary" (click)="goBack()">go back</button>
+    </div>
+</div>  
+    <!-- /.row -->

@@ -1,0 +1,32 @@
+/* HeroSearch private styles */
+.auto-complete-box li {
+  border-bottom: 1px solid #797979;
+  padding: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  list-style-type: none;
+  text-align: left;
+}
+
+.auto-complete-box li:hover {
+  background-color: #607D8B;
+}
+
+.auto-complete-box li a {
+  color: #888;
+  display: block;
+  text-decoration: none;
+}
+
+.auto-complete-box li a:hover {
+  color: white;
+}
+.auto-complete-box li a:active {
+  color: white;
+}
+
+
+.auto-complete-box {
+  padding-left: 0;
+  background: #f2f2f2;
+}

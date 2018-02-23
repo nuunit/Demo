@@ -1,0 +1,13 @@
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.1;
+  }
+.avg{
+    color: green
+  }
