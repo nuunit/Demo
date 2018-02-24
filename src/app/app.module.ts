@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { HotelService } from './hotel.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
+import { HotelTitleComponent } from './hotel-title/hotel-title.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
     HotelSearchComponent,
     HotelComponent,
     HomeComponent,
-    HotelDetailComponent
+    HotelDetailComponent,
+    HotelTitleComponent
   ],
   imports: [
     BrowserModule,    

@@ -1,0 +1,27 @@
+.stars {
+    background: url("../../assets/images/sprite.png") 0 -33px no-repeat;
+    display: inline-block;
+    height: 13px;
+    width: 86px;
+  }
+  
+  .one {
+    background-position: 0 -52px;
+  }
+  
+  .two {
+    background-position: 0 -72px;
+  }
+  
+  .three {
+    background-position: 0 -92px;
+  }
+  
+  .four {
+    background-position: 0 -112px;
+  }
+  
+  .five {
+    background-position: 0 -132px;
+  }
+  

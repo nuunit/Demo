@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HotelService } from '../hotel.service';
 import { ActivatedRoute } from '@angular/router';
 import { Hotel } from '../hotel';
 import { Location } from '@angular/common';
+import { City } from '../city';
 @Component({
   selector: 'app-hotel-detail',
   templateUrl: './hotel-detail.component.html',
   styleUrls: ['./hotel-detail.component.css']
 })
 export class HotelDetailComponent implements OnInit {
+  @Input() city:City;
   hotel:Hotel;
   constructor(private hotelService:HotelService,
               private route:ActivatedRoute,
@@ -25,5 +27,6 @@ export class HotelDetailComponent implements OnInit {
   };  
   goBack():void{
     this.location.back();
+    
   }
 }
