@@ -6,7 +6,7 @@ import { Component, OnInit,Input } from '@angular/core';
   styleUrls: ['./hotel-title.component.css']
 })
 export class HotelTitleComponent implements OnInit {
-  @Input() titleName:string;
+  @Input() hotel:string;
   constructor() { }
 
   ngOnInit() {

@@ -1,9 +1,22 @@
 <div class="container">
   
   <!-- Page Heading -->
-  <h1 class="my-4">{{cityCode}}: 
-    <small>{{hotels?.length}} Hotel found</small>
-  </h1>
+ 
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">  
+      <div class="container">
+    
+      </div>  
+    <button class="btn btn-secondary"  (click)="searchAgain()">Go back</button>
+  </nav>
+
+  <header class="bg-primary text-white">
+    <div class="container text-center">
+        <h1 class="my-4">{{city.name}}: 
+            <small>{{hotels?.length}} Hotel found</small>
+       </h1>
+    </div>    
+ </header>
+
   <div class="row" *ngFor="let hotel of hotels">
     <div class="col-md-5">
       <a href="#">
@@ -11,7 +24,7 @@
       </a>
     </div>
     <div class="col-md-5">
-      <app-hotel-title  [titleName]="hotel.name"></app-hotel-title>
+      <app-hotel-title  [hotel]="hotel"></app-hotel-title>
       <p>{{hotel.city.name}}</p>
       <p>{{hotel.address}}</p>
       <a class="btn btn-primary" href="/hotelDetail/{{hotel.id}}">Book</a>
@@ -26,5 +39,5 @@
     </div>
   
   </div>
-  <button class="btn"  (click)="searchAgain()">Go back</button>
+ 
 </div>

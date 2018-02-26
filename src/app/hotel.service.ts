@@ -27,6 +27,13 @@ export class HotelService {
         catchError(this.handleError('getHotelReusults', null))
       );
   }
+  getCityByCode (code:string):Observable<City>{
+    return this.http.get<City>(`${webApi}Hotel/GetCityByCode?code=${code}` )
+      .pipe(
+        tap(city => console.log(`fetched City`)),
+        catchError(this.handleError('getCityReusults', null))
+      );
+  }
 
   searchCity(term:string):Observable<City[]>{
     console.log("searchCity" + term);
@@ -49,6 +56,6 @@ export class HotelService {
   }
 
 private log(message: string) {
-  
+  console.log(message);
 }
 }

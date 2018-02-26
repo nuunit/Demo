@@ -4,6 +4,7 @@ import { HotelService } from '../hotel.service';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Location } from '@angular/common';
+import { City } from '../city';
 
 @Component({
   selector: 'app-hotel',
@@ -11,21 +12,31 @@ import { Location } from '@angular/common';
   styleUrls: ['./hotel.component.css']
 })
 export class HotelComponent implements OnInit {
-  cityCode:string;
+
   hotels: Hotel[];
+  city:City;
   constructor(private hotelService:HotelService, 
     private route:ActivatedRoute,
     private http:HttpClient ,
     private location:Location) { }
 
   ngOnInit() {
-    this.getHotels();   
+    let cityCode = this.route.snapshot.paramMap.get('city');
+    this.getHotels(cityCode);   
+    this.getCityByCode(cityCode);
   }
-  getHotels(): void{
-    this.cityCode = this.route.snapshot.paramMap.get('city');
-    this.hotelService.getHotelResults(this.cityCode).
+  getHotels(cityCode:string): void{
+ 
+    this.hotelService.getHotelResults(cityCode).
     subscribe(hotels => this.hotels = hotels )
   };  
+  getCityByCode(cityCode:string): void{
+    this.hotelService.getCityByCode(cityCode).
+    subscribe(city => this.city = city )
+  };  
+
+  
+
   searchAgain():void{
     this.location.back();
   }
